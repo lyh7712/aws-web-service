@@ -1,6 +1,5 @@
 package lyh7712.awswebservice.service;
 
-import javafx.geometry.Pos;
 import lyh7712.awswebservice.dto.PostsRequestDto;
 import lyh7712.awswebservice.model.Posts;
 import lyh7712.awswebservice.model.PostsRepository;

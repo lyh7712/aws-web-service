@@ -2,19 +2,25 @@ package lyh7712.awswebservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import lyh7712.awswebservice.dto.PostsRequestDto;
+import lyh7712.awswebservice.dto.PostsResponseDto;
 import lyh7712.awswebservice.service.PostsService;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/api/v1")
 public class PostsApiController {
 
     private final PostsService postsService;
 
-    @RequestMapping("/api/v1/posts")
+    @RequestMapping("/posts")
     public Long save(@RequestBody PostsRequestDto requestDto) {
         return postsService.save(requestDto);
+    }
+
+
+    @GetMapping("/posts/{id}")
+    public PostsResponseDto findById(@PathVariable Long id) {
+        return postsService.findPosts(id);
     }
 }
