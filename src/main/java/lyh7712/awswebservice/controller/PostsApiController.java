@@ -18,7 +18,7 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-
+    //
     @GetMapping("/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findPosts(id);
