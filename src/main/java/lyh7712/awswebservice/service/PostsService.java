@@ -27,7 +27,7 @@ public class PostsService {
         Posts entity = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 게시물 입니다. id = " + id));
 
-        entity.update(updateDto.getTitle(), updateDto.getContent());
+        entity.upDate(updateDto.getTitle(), updateDto.getContent());
 
         return id;
     }
